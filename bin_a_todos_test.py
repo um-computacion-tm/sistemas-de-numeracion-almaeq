@@ -13,6 +13,7 @@ class TestBinToDecim(unittest.TestCase):
 class TestBinToOctal(unittest.TestCase):
     @parameterized.expand([
         ("00111111","77"),
+        ("1000011111", "1037")
     ])
     def test(self, num, binario):
         self.assertEqual(bin_to_octal(num),binario)
@@ -20,6 +21,7 @@ class TestBinToOctal(unittest.TestCase):
 class TestBinToHexa(unittest.TestCase):
     @parameterized.expand([
         ("001001010100","254"),
+        ("1010101100010010","AB12")
     ])
     def test(self, num, binario):
         self.assertEqual(bin_to_hexa(num),binario)

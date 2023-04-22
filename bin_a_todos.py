@@ -22,14 +22,12 @@ def bin_to_octal(num):
 def bin_to_hexa(num):
     hex_digits = "0123456789ABCDEF"
     hex_num = ""
-    # asegurarse de que la longitud del número binario sea un múltiplo de 4
     while len(num) % 4 != 0:
         num = "0" + num
-    # iterar sobre el número binario en grupos de 4 dígitos
     for i in range(0, len(num), 4):
         # obtener el grupo de 4 dígitos
         binary_group = num[i:i+4]
-        # convertir el grupo de 4 dígitos en su equivalente hexadecimal
+        # convertir el grupo de 4 dígitos a hexadecimal
         decimal = 0
         for digit in binary_group:
             decimal = decimal * 2 + int(digit)

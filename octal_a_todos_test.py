@@ -1,4 +1,4 @@
-from octal_a_todos import octal_to_decim, octal_to_bin
+from octal_a_todos import octal_to_decim, octal_to_bin, octal_to_hexa
 from parameterized import parameterized, parameterized_class
 import unittest
 
@@ -19,6 +19,14 @@ class TestOctalToBin(unittest.TestCase):
     ])
     def test(self, num, octal):
         self.assertEqual(octal_to_bin(num),octal)
+
+class TestOctalToHexa(unittest.TestCase):
+    @parameterized.expand([
+        ("24","14"),
+        ("123","53")
+        ])
+    def test(self, num, octal):
+        self.assertEqual(octal_to_hexa(num),octal)
 
 if __name__ == '__main__':
     unittest.main()
