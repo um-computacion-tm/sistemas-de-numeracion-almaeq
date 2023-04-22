@@ -9,11 +9,10 @@ def decim_to_bin(num):
         resultado += "1"
     else:
         resultado += "0"
-    if len(resultado) < 8:
-        cant = 8 - len(resultado)
-        resultado += "0" * cant
-    result = resultado[::-1] 
-    return result
+    resultado = resultado[::-1]
+    cant_ceros = (8 - len(resultado) % 8) % 8
+    resultado = '0' * cant_ceros + resultado
+    return resultado
 
 def decim_to_octal(num):
     octal = ""
